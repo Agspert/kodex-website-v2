@@ -3,9 +3,16 @@ import Layout from "../components/shared/Layout";
 import HeroSection from "../components/sections/HeroSection";
 import ValuePropositionCards from "../components/sections/ValuePropositionCards";
 import ContactForm from "../components/sections/ContactForm";
+import CaseStudyModal from "../components/sections/CaseStudyModal";
 
 
 export default function Index() {
+  const [isCaseStudyModalOpen, setIsCaseStudyModalOpen] = useState(false);
+
+  function openCollectContactForm(): void {
+    setIsCaseStudyModalOpen(true);
+  }
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -66,7 +73,7 @@ export default function Index() {
         </div>
 
         <div className="text-center mt-16">
-          <button className="bg-black text-white px-12 py-4 rounded-full text-xl font-medium shadow-lg shadow-white/50 hover:shadow-white/70 transition-all">
+          <button onClick={() => window.open("https://app.mykodex.com", "_blank")} className="bg-black text-white px-12 py-4 rounded-full text-xl font-medium shadow-lg shadow-white/50 hover:shadow-white/70 transition-all">
             Create Your 3D Story
           </button>
           <p className="mt-4 text-base">✨ Start for Free - No Credit Card required</p>
@@ -222,10 +229,10 @@ export default function Index() {
               Helping <span className="font-bold">Shopify</span> brands grow organically with authentic storytelling
             </h3>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-black text-white px-8 py-3 rounded-full font-bold text-lg border-2 border-black shadow-lg hover:shadow-xl transition-all">
+              <button onClick={() => openCollectContactForm()} className="bg-black text-white px-8 py-3 rounded-full font-bold text-lg border-2 border-black shadow-lg hover:shadow-xl transition-all">
                 Download Case Study
               </button>
-              <button className="bg-black text-white px-8 py-3 rounded-full font-bold text-lg border-2 border-black shadow-lg hover:shadow-xl transition-all">
+              <button onClick={() => window.open("https://apps.shopify.com/brand-story", "_blank")} className="bg-black text-white px-8 py-3 rounded-full font-bold text-lg border-2 border-black shadow-lg hover:shadow-xl transition-all">
                 Try on Shopify
               </button>
             </div>
@@ -348,7 +355,7 @@ export default function Index() {
               <p className="leading-relaxed">
                 Embed interactive, AI-driven 3D product stories on your website with one click. Customers can rotate your 3D content, click info icons to uncover your brand values.
               </p>
-              <button className="w-full bg-black text-white px-8 py-3 rounded-full font-bold border border-white shadow-lg shadow-white/40 hover:shadow-white/60 transition-all">
+              <button onClick={() => window.open("https://calendly.com/d/csnm-5gc-cgv/30-minute-meeting", "_blank")} className="w-full bg-black text-white px-8 py-3 rounded-full font-bold border border-white shadow-lg shadow-white/40 hover:shadow-white/60 transition-all">
                 Embed 3D stories on website
               </button>
             </div>
@@ -361,7 +368,7 @@ export default function Index() {
               <p className="leading-relaxed">
                 Download QR codes for product labels and point-of-sale displays. Engage customers with immersive 3D stories. Track every scan for actionable analytics, boost brand transparency, and increase conversion rates.
               </p>
-              <button className="w-full bg-black text-white px-8 py-3 rounded-full font-bold border border-white shadow-lg shadow-white/40 hover:shadow-white/60 transition-all">
+              <button onClick={() => window.open("https://calendly.com/d/csnm-5gc-cgv/30-minute-meeting", "_blank")} className="w-full bg-black text-white px-8 py-3 rounded-full font-bold border border-white shadow-lg shadow-white/40 hover:shadow-white/60 transition-all">
                 Download QRs for product labels
               </button>
             </div>
@@ -438,6 +445,12 @@ export default function Index() {
           <ContactForm/>
         </div>
       </section>
+
+      {/* Case Study Modal */}
+      <CaseStudyModal 
+        isOpen={isCaseStudyModalOpen} 
+        onClose={() => setIsCaseStudyModalOpen(false)} 
+      />
     </Layout>
   );
 }

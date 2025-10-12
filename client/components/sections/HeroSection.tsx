@@ -32,10 +32,10 @@ const HeroSection: React.FC = () => {
           </h1>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition-all">
+            <button onClick={() => window.open("https://apps.shopify.com/brand-story", "_blank")} className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition-all">
               Free Trial
             </button>
-            <button className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition-all">
+            <button onClick={() => window.open("https://calendly.com/d/csnm-5gc-cgv/30-minute-meeting", "_blank")} className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 transition-all">
               Book a demo
             </button>
           </div>

@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ showShopifyButton = true }) => {
         <a href="/#pricing" className="hover:text-white/80 transition-colors text-white">Pricing</a>
         <a href="/#contact" className="hover:text-white/80 transition-colors text-white">Contact</a>
         {showShopifyButton && (
-          <button className="bg-kodex-dark-secondary text-white rounded-md hover:bg-opacity-90 transition-colors inline-block p-1">
+          <button onClick={() => window.open("https://apps.shopify.com/brand-story", "_blank")} className="bg-kodex-dark-secondary text-white rounded-md hover:bg-opacity-90 transition-colors inline-block p-1">
             <img src="/Button - To Shopify.png" className="h-10 md:h-10 w-auto"/>
           </button>
         )}
@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ showShopifyButton = true }) => {
       {/* Mobile Hamburger Menu */}
       <div className="md:hidden flex items-center gap-4">
         {showShopifyButton && (
-          <button className="bg-kodex-dark-secondary text-white rounded-md hover:bg-opacity-90 transition-colors inline-block p-1">
+          <button onClick={() => window.open("https://apps.shopify.com/brand-story", "_blank")} className="bg-kodex-dark-secondary text-white rounded-md hover:bg-opacity-90 transition-colors inline-block p-1">
             <img src="/Button - To Shopify.png" className="h-8 w-auto"/>
           </button>
         )}
