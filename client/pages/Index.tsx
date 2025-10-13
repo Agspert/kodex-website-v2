@@ -165,6 +165,16 @@ export default function Index() {
               <div className="absolute inset-0 flex items-center justify-center gap-4">
                 <img src="/WoolahPacket.png" alt="Woolah Tea Packet" className="h-40 object-cover" />
                 <img src="/QR_eg_WoolahTea.gif" alt="QR Code Example" className="h-full object-cover rounded-2xl" />
+                <img
+                  src="/box+arrow.png"
+                  alt="Box Arrow"
+                  className="
+                    absolute
+                    bottom-[4.15rem] md:bottom-24
+                    left-[6.2rem] md:left-[9.5rem]
+                    w-1/3 md:w-1/4
+                  "
+                />
               </div>
             </div>
           </div>
