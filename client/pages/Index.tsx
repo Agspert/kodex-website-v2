@@ -28,8 +28,8 @@ export default function Index() {
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Step 1 */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="bg-kodex-dark-secondary rounded-3xl border border-kodex-lighter-gray shadow-lg shadow-white/40 h-80 flex items-center justify-center">
-              <img src="/Rec 1.gif" alt="Real-Time Drag-&-Drop Story Builder" className="w-full h-full object-cover rounded-3xl" />
+            <div className="bg-kodex-dark-secondary rounded-3xl border border-kodex-lighter-gray shadow-lg shadow-white/40 h-auto md:h-80 flex items-center justify-center">
+              <img src="/Rec 1.gif" alt="Real-Time Drag-&-Drop Story Builder" className="w-full h-auto md:h-full object-contain md:object-cover rounded-3xl" />
             </div>
             <div className="space-y-4">
               <h3 className="text-xl md:text-2xl font-bold">Real-Time Drag-&-Drop Story Builder</h3>
@@ -51,15 +51,15 @@ export default function Index() {
                 <p>👀 Preview the live storefront integration in real time to ensure a seamless, on-brand customer experience.</p>
               </div>
             </div>
-            <div className="bg-kodex-dark-secondary rounded-3xl border border-kodex-lighter-gray shadow-lg shadow-white/40 h-80 flex items-center justify-center order-1 md:order-2">
-              <img src="/Rec 2.gif" alt="Instant Storefront Story Publishing & Preview" className="w-full h-full object-cover rounded-3xl" />
+            <div className="bg-kodex-dark-secondary rounded-3xl border border-kodex-lighter-gray shadow-lg shadow-white/40 h-auto md:h-80 flex items-center justify-center order-1 md:order-2">
+              <img src="/Rec 2.gif" alt="Instant Storefront Story Publishing & Preview" className="w-full h-auto md:h-full object-contain md:object-cover rounded-3xl" />
             </div>
           </div>
 
           {/* Step 3 */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="bg-kodex-dark-secondary rounded-3xl border border-kodex-lighter-gray shadow-lg shadow-white/40 h-80 flex items-center justify-center">
-              <img src="/Rec 3.gif" alt="Engagement Analytics & Instant CSV Export" className="w-full h-full object-cover rounded-3xl" />
+            <div className="bg-kodex-dark-secondary rounded-3xl border border-kodex-lighter-gray shadow-lg shadow-white/40 h-auto md:h-80 flex items-center justify-center">
+              <img src="/Rec 3.gif" alt="Engagement Analytics & Instant CSV Export" className="w-full h-auto md:h-full object-contain md:object-cover rounded-3xl" />
             </div>
             <div className="space-y-4">
               <h3 className="text-xl md:text-2xl font-bold">Engagement Analytics & Instant CSV Export</h3>
@@ -170,9 +170,9 @@ export default function Index() {
                   alt="Box Arrow"
                   className="
                     absolute
-                    bottom-[4.15rem] md:bottom-24
-                    left-[6.2rem] md:left-[9.5rem]
-                    w-1/3 md:w-1/4
+                    bottom-[4rem] md:bottom-24
+                    left-[7.35rem] md:left-[9.5rem]
+                    w-[9rem] md:w-1/4
                   "
                 />
               </div>
