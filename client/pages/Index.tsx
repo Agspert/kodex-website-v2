@@ -163,18 +163,21 @@ export default function Index() {
             </div>
             <div className="relative h-80 md:h-96">
               <div className="absolute inset-0 flex items-center justify-center gap-4">
-                <img src="/WoolahPacket.png" alt="Woolah Tea Packet" className="h-40 object-cover" />
+                <div className="relative h-full flex justify-center items-center">
+                  <img src="/WoolahPacket.png" alt="Woolah Tea Packet" className="h-40 object-cove" />
+                  <img
+                    src="/box+arrow.png"
+                    alt="Box Arrow"
+                    className="
+                      absolute
+                      left-[48%] md:left-[46.5%]
+                      bottom-[22.5%] md:bottom-[25%]
+                      w-[70%] md:w-[80%]
+                      pointer-events-none
+                    "
+                  />
+                </div>
                 <img src="/QR_eg_WoolahTea.gif" alt="QR Code Example" className="h-full object-cover rounded-2xl" />
-                <img
-                  src="/box+arrow.png"
-                  alt="Box Arrow"
-                  className="
-                    absolute
-                    bottom-[4rem] md:bottom-24
-                    left-[7.35rem] md:left-[9.5rem]
-                    w-[9rem] md:w-1/4
-                  "
-                />
               </div>
             </div>
           </div>
