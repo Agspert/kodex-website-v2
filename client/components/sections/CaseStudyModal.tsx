@@ -23,12 +23,14 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
+const phoneRegex = /^\+?[0-9]{1,4}?[-.\s]?\(?[0-9]{1,6}\)?([-\s.]?[0-9]{1,6}){1,6}$/;
+
 const formSchema = z.object({
   name: z.string().min(2, {
     message: "Name must be at least 2 characters.",
   }),
-  phone: z.string().min(10, {
-    message: "Contact number must be at least 10 characters.",
+  phone: z.string().regex(phoneRegex, {
+    message: "Please enter a valid contact number.",
   }),
 });
 
@@ -140,6 +142,14 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ isOpen, onClose }) => {
                       className="w-full bg-transparent border border-kodex-light-gray rounded-lg px-4 py-3 focus:outline-none focus:border-kodex-green"
                       placeholder="Enter your contact number here"
                       {...field}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        // Allow only characters that are valid in phone numbers: +, -, ., space, (, ), and digits
+                        const sanitized = value.replace(/[^0-9+\-.\s()]/g, '');
+                        // Limit to maximum 20 characters
+                        const limited = sanitized.slice(0, 20);
+                        field.onChange(limited);
+                      }}
                     />
                   </FormControl>
                   <FormMessage />
