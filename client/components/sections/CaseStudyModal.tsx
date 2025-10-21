@@ -23,12 +23,14 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
+const phoneRegex = /^\+?[0-9]{1,4}?[-.\s]?\(?[0-9]{1,6}\)?([-\s.]?[0-9]{1,6}){1,6}$/;
+
 const formSchema = z.object({
   name: z.string().min(2, {
     message: "Name must be at least 2 characters.",
   }),
-  email: z.string().email({
-    message: "Email is compulsory.",
+  phone: z.string().regex(phoneRegex, {
+    message: "Please enter a valid contact number.",
   }),
 });
 
@@ -44,7 +46,7 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ isOpen, onClose }) => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      email: "",
+      phone: "",
     },
   });
 
@@ -59,6 +61,7 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ isOpen, onClose }) => {
       };
 
       const res = await fetch(`https://mx6t4kr0pb7jvulx.agspert-ai.com/website/client/`, {
+      // const res = await fetch(`http://localhost:8000/website/client/`, {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
@@ -129,16 +132,24 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ isOpen, onClose }) => {
 
             <FormField
               control={form.control}
-              name="email"
+              name="phone"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Work email</FormLabel>
+                  <FormLabel>Contact number</FormLabel>
                   <FormControl>
                     <Input
-                      type="email"
+                      type="tel"
                       className="w-full bg-transparent border border-kodex-light-gray rounded-lg px-4 py-3 focus:outline-none focus:border-kodex-green"
-                      placeholder="Enter your email here"
+                      placeholder="Enter your contact number here"
                       {...field}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        // Allow only characters that are valid in phone numbers: +, -, ., space, (, ), and digits
+                        const sanitized = value.replace(/[^0-9+\-.\s()]/g, '');
+                        // Limit to maximum 20 characters
+                        const limited = sanitized.slice(0, 20);
+                        field.onChange(limited);
+                      }}
                     />
                   </FormControl>
                   <FormMessage />
